@@ -1,30 +1,49 @@
 # Laboratorio 8 — Switching, VLAN, Ethernet y WiFi
 
-Trabajo de **Juan Esteban Ortiz Pastrana** y **Santiago Alberto Naranjo Abril**, presentado en la Escuela Colombiana de Ingeniería Julio Garavito el 9 de diciembre de 2023.
+**Autores:** Juan Esteban Ortiz Pastrana y Santiago Alberto Naranjo Abril  
+**Institución:** Escuela Colombiana de Ingeniería Julio Garavito  
+**Grupo:** 2  
+**Fecha:** 9 de diciembre de 2023
 
-## Descripción
+## Introducción
 
-El laboratorio explora redes Ethernet y WiFi, el funcionamiento de switches de capa 2 y 3 y su configuración práctica mediante equipos físicos, Packet Tracer, Wireshark y una interfaz de línea de comandos.
+El laboratorio estudia redes Ethernet y WiFi, switches de capa 2 y 3 y su configuración mediante equipos físicos, Packet Tracer, Wireshark y una interfaz de línea de comandos.
 
-## Temas abordados
+## Fundamentos
 
-- Diferencias entre switches de capa 2 y capa 3.
-- Redes Ethernet, WiFi y LAN.
-- VLAN y segmentación lógica.
-- Spanning Tree Protocol en redes con varios switches.
-- Configuración básica de switches.
-- Captura y análisis de solicitudes ICMP con Wireshark.
-- Configuración de una red inalámbrica y asignación mediante DHCP.
-- Servidor web dinámico con DNS, Apache y PHP.
+- Un **switch de capa 2** comunica dispositivos de una LAN mediante direcciones MAC y permite asignar VLAN a sus puertos.
+- Un **switch de capa 3** agrega enrutamiento mediante direcciones IP y control de subredes.
+- **Ethernet** define la transmisión de datos en redes cableadas.
+- **WiFi** conecta dispositivos mediante radiofrecuencia.
+- Una **VLAN** segmenta lógicamente una red física para aplicar políticas y reducir tráfico.
 
-## Desarrollo
+## Montajes
 
-Se configuraron switches y se verificó la conectividad mediante `ping`. En topologías más grandes se observó el uso de STP para detectar bucles y el comportamiento de switches y hubs durante el envío de paquetes.
+### Configuración básica
 
-También se crearon VLAN y se comprobó la comunicación entre dispositivos de la misma red virtual. La práctica WiFi incluyó el nombre de la red, contraseña, direccionamiento, DHCP y pruebas de conectividad. Finalmente se documentó una calculadora de notas en PHP alojada mediante Apache.
+Se conectan dos equipos a un switch y se comprueba la comunicación mediante `ping`. Wireshark permite revisar las direcciones IP y MAC, la solicitud ICMP, el control de errores y el checksum.
+
+### Redes de switches
+
+En una topología más grande se observa el uso de STP para detectar bucles y bloquear lógicamente un enlace. En modo simulación se analiza el recorrido de los paquetes y el comportamiento de un hub, que replica el tráfico como un pequeño broadcast.
+
+### VLAN
+
+Se crean redes virtuales, se asignan puertos y se verifica la comunicación mediante `ping`. Wireshark permite identificar la VLAN asociada al tráfico.
+
+### WiFi
+
+Se configura el router desde `192.168.0.1`, definiendo nombre de red, contraseña, dirección, máscara y rango DHCP. Las pruebas incluyen intensidad de señal, canal, conectividad a Internet y acceso después de ocultar la red.
+
+### Servidor web dinámico
+
+Se reutiliza la configuración DNS del laboratorio 3, se instala Apache en Solaris y se aloja una calculadora de notas desarrollada en PHP.
 
 ## Conclusiones
 
-Los switches de capa 2 trabajan con direcciones MAC y VLAN, mientras que los de capa 3 agregan capacidades de enrutamiento. Ambos cumplen una función importante en la comunicación eficiente de una infraestructura de red.
+El informe concluye que los switches son esenciales para mantener un flujo de datos seguro y eficiente. La capa 2 trabaja con direcciones MAC y comunicación dentro de una LAN; la capa 3 incorpora direccionamiento lógico, control de subredes y enrutamiento estático o dinámico.
 
-> Este README fue elaborado exclusivamente a partir del informe `Lab 8.docx`.
+## Contenido del repositorio
+
+- Informe completo en DOCX y PDF.
+- Topologías de LAN, WiFi y redes de switches desarrolladas por Santiago Naranjo.
